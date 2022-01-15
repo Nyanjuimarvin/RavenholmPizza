@@ -1,5 +1,23 @@
-/*Navbar*/
+@font-face {
+  font-family: "LiebeErika";
+  src: url("//db.onlinewebfonts.com/t/9897e38317b3a3c0a35153fcc9298387.eot");
+  src: url("//db.onlinewebfonts.com/t/9897e38317b3a3c0a35153fcc9298387.eot?#iefix")
+      format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/9897e38317b3a3c0a35153fcc9298387.woff2")
+      format("woff2"),
+    url("//db.onlinewebfonts.com/t/9897e38317b3a3c0a35153fcc9298387.woff")
+      format("woff"),
+    url("//db.onlinewebfonts.com/t/9897e38317b3a3c0a35153fcc9298387.ttf")
+      format("truetype"),
+    url("//db.onlinewebfonts.com/t/9897e38317b3a3c0a35153fcc9298387.svg#LiebeErika")
+      format("svg");
+}
 
+*{
+  font-family: LiebeErika,sans-serif;
+  font-size: 40px;
+}
+/*Navbar*/
 .navbar-toggler {
   width: 20px;
   height: 20px;
