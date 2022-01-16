@@ -128,3 +128,7 @@ button[class*="btn"] {
   color: #43484d;
   font-weight: 300;
 }
+
+.form2, .form3 , .checkout{
+  display: none;
+}

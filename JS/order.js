@@ -1,5 +1,31 @@
+class Pizza{
+  constructor(size, crust, toppings, name,quantity) {
+		this.size = size;
+		this.crust = crust
+		this.toppings = toppings;
+		this.name = name;
+    this.quantity = quantity;
+	}
+
+  currentOrder(){
+    const { size,crust,toppings,name,quantity } = this;
+    return `Name:${name} ,Size:${size},Quantity:${quantity}, Crust:${crust}, Toppings:${toppings}`;
+  }
+
+  currentPrice(){
+    const { size,crust,toppings,quantity } = this;
+    return (size + crust + toppings ) * quantity;
+  }
+
+  orderSummary(){
+    return `${this.currentOrder}  ${this.currentPrice}`;
+  }
+
+}
+
+
 $(document).ready(() => {
-  
+
   //plus button logic
   $(".plus-btn").on("click", function (e) {
     e.preventDefault();

@@ -50,48 +50,49 @@
             </div>
         </nav>
 
-        <div class="container formholder">
+        <div class="container mt-5 mb-5">
 
             <div class="row">
 
                 <div class="col-3"></div>
                 <div class="col-6 form">
                     <div class="form1">
-                        <form action="" class="form-control bg-black bg-opacity-75">
+                        <form action="" class="orderform form-control bg-black bg-opacity-75">
                             <fieldset class="mb-3">
                                 <legend class="text-center">Place Order</legend>
                                 <select class="form-control" name="" id="pizzas">
                                     <option disabled selected>Pizza Name</option>
-                                    <option value="">Cheese Pizza</option>
-                                    <option value="">Veggie</option>
-                                    <option value="">Pepperoni</option>
-                                    <option value="">Meat</option>
-                                    <option value="">Bbq Chicken</option>
-                                    <option value="">Margherita</option>
-                                    <option value="">Hawaiian</option>
-                                    <option value="">Boerewors</option>
-                                    <option value="">Napoletana</option>
-                                    <option value=""></option>
-                                    <option value=""></option>
+                                    <option value="Cheese Pizza">Cheese Pizza</option>
+                                    <option value="Veggie Pizza">Veggie</option>
+                                    <option value="Pepperoni Pizza">Pepperoni</option>
+                                    <option value="Meat Pizza">Meat</option>
+                                    <option value="Bbq Chicken Pizza">Bbq Chicken</option>
+                                    <option value="Margherita Pizza">Margherita</option>
+                                    <option value="Hawaiian Pizza">Hawaiian</option>
+                                    <option value="Boerewors Pizza">Boerewors</option>
+                                    <option value="Pizza Napoletana">Napoletana</option>
+                                    <option value="Teriyaki Chicken Pizza">Chicken Teriyaki</option>
+                                    <option value="Pizza Siciliana">Siciliana</option>
+                                    <option value="Bbq Beef Pizza">Bbq Beef</option>
                                 </select>
                             </fieldset>
                             <fieldset class="mb-3">
                                 <select class="form-control" name="" id="sizes">
                                     <option disabled selected>Pizza Size</option>
-                                    <option value="">Small</option>
-                                    <option value="">Medium</option>
-                                    <option value="">Large</option>
-                                    <option value="">Mega</option>
+                                    <option value="mega">Mega</option>
+                                    <option value="large">Large</option>
+                                    <option value="medium">Medium</option>
+                                    <option value="small">Small</option>
                                 </select>
                             </fieldset>
 
                             <fieldset class="mb-3">
                                 <select class="form-control" name="" id="crusts">
                                     <option disabled selected>Pizza Crust</option>
-                                    <option value="">Crispy</option>
-                                    <option value="">GlutenFree</option>
-                                    <option value="">x</option>
-                                    <option value="">x</option>
+                                    <option value="crispy">Crispy</option>
+                                    <option value="glutenfree">GlutenFree</option>
+                                    <option value="flatbread">Flatbread</option>
+                                    <option value="thick">Thick</option>
                                 </select>
                             </fieldset>
 
@@ -99,26 +100,26 @@
 
                             <fieldset class="mb-2">
                                 <label class="checkbox-inline">
-                                    <input class="ms-5 me-2" type="checkbox" value="1">Black Olives
+                                    <input class="ms-5 me-2" type="checkbox" value="Black Olives">Black Olives
                                 </label>
                                 <label class="checkbox-inline">
-                                    <input class="ms-5 me-2" type="checkbox" value="2">Sausage
+                                    <input class="ms-5 me-2" type="checkbox" value="Sausage">Sausage
                                 </label>
                                 <label class="checkbox-inline">
-                                    <input class="ms-5 me-2" type="checkbox" value="3">Extra Cheese
+                                    <input class="ms-5 me-2" type="checkbox" value="Extra Cheese">Extra Cheese
                                 </label>
 
                             </fieldset>
                             <fieldset>
                                 <label class="checkbox-inline">
-                                    <input class="ms-5 me-3" type="checkbox" value="">Mushroom
+                                    <input class="ms-5 me-3" type="checkbox" value="Mushroom">Mushroom
                                 </label>
                                 <label class="checkbox-inline">
-                                    <input class="ms-5 me-4" type="checkbox" value="">Garlic
+                                    <input class="ms-5 me-4" type="checkbox" value="Fresh Garlic">Garlic
                                 </label>
 
                                 <label class="checkbox-inline">
-                                    <input class="ms-5 me-2" type="checkbox" value="">Basil
+                                    <input class="ms-5 me-2" type="checkbox" value="Fresh Basil">Basil
                                 </label>
                             </fieldset>
 
@@ -130,7 +131,7 @@
                                     <button class="minus-btn" type="button" name="button">
                                         <img src="../images/minus.svg" alt="" />
                                     </button>
-                                    <input type="text" name="name" value="1">
+                                    <input class="quantity bg-transparent text-white" type="text" name="name" value="1">
                                     <button class="plus-btn" type="button" name="button">
                                         <img src="../images/plus.svg" alt="" />
                                     </button>
@@ -141,7 +142,7 @@
                             </fieldset>
                             <fieldset class="text-center mb">
                                 <input class="btn btn-primary mb-4 me-3" type="submit" value="Checkout">
-                                <input class="btn btn-primary mb-4" type="button" value="Add Order">
+                                <input class="btn btn-primary mb-4" id="addpizza" type="button" value="Add Order">
                             </fieldset>
                         </form>
                     </div>
@@ -156,7 +157,7 @@
                         </form>
                     </div>
 
-                    <div class="form-3">
+                    <div class="form3">
                         <form class="form-control bg-black bg-opacity-75" action="">
                             <fieldset>
                                 <legend class="text-center">Fill in credentials</legend>
