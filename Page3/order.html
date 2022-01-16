@@ -50,17 +50,17 @@
             </div>
         </nav>
 
-        <div class="container">
+        <div class="container formholder">
 
             <div class="row">
 
                 <div class="col-3"></div>
-                <div class="col-6">
+                <div class="col-6 form">
                     <div class="form1">
-                        <form action="" class="form-control">
+                        <form action="" class="form-control bg-black bg-opacity-75">
                             <fieldset class="mb-3">
                                 <legend class="text-center">Place Order</legend>
-                                <select class="form-control" name="" id="">
+                                <select class="form-control" name="" id="pizzas">
                                     <option disabled selected>Pizza Name</option>
                                     <option value="">Cheese Pizza</option>
                                     <option value="">Veggie</option>
@@ -76,7 +76,7 @@
                                 </select>
                             </fieldset>
                             <fieldset class="mb-3">
-                                <select class="form-control" name="" id="">
+                                <select class="form-control" name="" id="sizes">
                                     <option disabled selected>Pizza Size</option>
                                     <option value="">Small</option>
                                     <option value="">Medium</option>
@@ -85,17 +85,27 @@
                                 </select>
                             </fieldset>
 
+                            <fieldset class="mb-3">
+                                <select class="form-control" name="" id="crusts">
+                                    <option disabled selected>Pizza Crust</option>
+                                    <option value="">Crispy</option>
+                                    <option value="">GlutenFree</option>
+                                    <option value="">x</option>
+                                    <option value="">x</option>
+                                </select>
+                            </fieldset>
+
                             <p class="text-center">-- Toppings --</p>
 
                             <fieldset class="mb-2">
                                 <label class="checkbox-inline">
-                                    <input class="ms-5 me-2" type="checkbox" value="">Black Olives
+                                    <input class="ms-5 me-2" type="checkbox" value="1">Black Olives
                                 </label>
                                 <label class="checkbox-inline">
-                                    <input class="ms-5 me-2" type="checkbox" value="">Sausage
+                                    <input class="ms-5 me-2" type="checkbox" value="2">Sausage
                                 </label>
                                 <label class="checkbox-inline">
-                                    <input class="ms-5 me-2" type="checkbox" value="">Extra Cheese
+                                    <input class="ms-5 me-2" type="checkbox" value="3">Extra Cheese
                                 </label>
 
                             </fieldset>
@@ -137,7 +147,7 @@
                     </div>
 
                     <div class="form2">
-                        <form action="" class="form-control">
+                        <form action="" class="form-control bg-black bg-opacity-75">
                             <fieldset class="text-center">
                                 <legend>How will your Pizza get to you</legend>
                                 <input class="btn btn-primary" type="button" value="Home delivery">
@@ -147,7 +157,7 @@
                     </div>
 
                     <div class="form-3">
-                        <form class="form-control" action="">
+                        <form class="form-control bg-black bg-opacity-75" action="">
                             <fieldset>
                                 <legend class="text-center">Fill in credentials</legend>
                                 <div class="row ms-4 mb-3 g-2"> 
@@ -164,11 +174,11 @@
 
                     <div class="checkout">
 
-                        <form class="form-control" action="">
+                        <form class="form-control bg-black bg-opacity-75" action="">
                             <input class="d-block mx-auto btn btn-primary" type="submit" value="Finish">
                         </form>
                     </div>
-                    
+
                 </div>
                 <div class="col-3"></div>
             </div>

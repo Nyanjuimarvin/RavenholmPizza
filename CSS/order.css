@@ -1,3 +1,9 @@
+body{
+  background: url(../images/pizza.jpg)fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 /*Navbar*/
 .navbar-toggler {
   width: 20px;

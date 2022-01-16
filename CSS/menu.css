@@ -1,160 +1,217 @@
-*{
-  background-color: #ffeb2b;
-}
 /*Navbar*/
 .navbar-toggler {
-    width: 20px;
-    height: 20px;
-    position: relative;
-    transition: .5s ease-in-out;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  transition: 0.5s ease-in-out;
 }
 
 .navbar-toggler,
 .navbar-toggler:focus,
 .navbar-toggler:active,
 .navbar-toggler-icon:focus {
-    outline: none;
-    box-shadow: none;
-    border: 0;
+  outline: none;
+  box-shadow: none;
+  border: 0;
 }
 
 .navbar-toggler span {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .toggler-icon {
-    display: block;
-    position: absolute;
-    height: 3px;
-    width: 100%;
-    background: #d3531a;
-    border-radius: 1px;
-    opacity: 1;
-    left: 0;
-    transform: rotate(0deg);
-    transition: .25s ease-in-out;
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: #d3531a;
+  border-radius: 1px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: 0.25s ease-in-out;
 }
 
 .middle-bar {
-    margin-top: 0px;
+  margin-top: 0px;
 }
 
 /* when navigation is clicked */
 
 .navbar-toggler .top-bar {
-    margin-top: 0px;
-    transform: rotate(135deg);
+  margin-top: 0px;
+  transform: rotate(135deg);
 }
 
 .navbar-toggler .middle-bar {
-    opacity: 0;
-    filter: alpha(opacity=0);
+  opacity: 0;
+  filter: alpha(opacity=0);
 }
 
 .navbar-toggler .bottom-bar {
-    margin-top: 0px;
-    transform: rotate(-135deg);
+  margin-top: 0px;
+  transform: rotate(-135deg);
 }
 
 /* State when the navbar is collapsed */
 
 .navbar-toggler.collapsed .top-bar {
-    margin-top: -20px;
-    transform: rotate(0deg);
+  margin-top: -20px;
+  transform: rotate(0deg);
 }
 
 .navbar-toggler.collapsed .middle-bar {
-    opacity: 1;
-    filter: alpha(opacity=100);
+  opacity: 1;
+  filter: alpha(opacity=100);
 }
 
 .navbar-toggler.collapsed .bottom-bar {
-    margin-top: 20px;
-    transform: rotate(0deg);
+  margin-top: 20px;
+  transform: rotate(0deg);
 }
 
 /* Color of 3 lines */
 
 .navbar-toggler.collapsed .toggler-icon {
-    background: linear-gradient( 263deg, rgba(252,74,74,1) 0%, rgba(0,212,255,1) 100% );
+  background: linear-gradient(
+    263deg,
+    rgba(252, 74, 74, 1) 0%,
+    rgba(0, 212, 255, 1) 100%
+  );
 }
 
 /*Navbar-end*/
 
-
 .card {
-    height: 450px;
-    width: 100%;
-    border-radius: 11px;
-    position: relative;
-    perspective: 33200px;/*1200px*/
-  }
-  
-  .card:hover .card-front {
-    transform: rotateY(-180deg);
-  }
-  
-  .card:hover .card-back {
-    transform: rotateY(0deg);
-  }
-  
-  .card-front,
-  .card-back {
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    box-shadow: 0 0 16px 0 #858194;
-    position: absolute;
-    backface-visibility: hidden;
-    transition: transform 1s cubic-bezier(0.3, 0.6, 0.3, 1.2);
-  }
-  
-  .card-front {
-    background: url("../images/pizza-hut-1599752151.jpg")center center/ cover no-repeat;
-  }
-  
-  .card-back {
-    background: #fefffe;
-    color: #2d3047;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    text-align: center;
-    transform: rotateY(180deg);
-  }
-  
-  .profile-picture {
-    height: 150px;
-    width: 150px;
-    border-radius: 50%;
-    padding: 5px;
-    background: linear-gradient(135deg, #f9e900, #ed33b9);
-  }
-  
-  .bio .name {
-    font-size: 1.8rem;
-  }
-  
-  .bio .title {
-    font-size: 1.2rem;
-  }
-  
-  .icons {
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-  }
-  
-  .icons .icon {
-    background: linear-gradient(135deg, #f9e900, #ed33b9);
-    color: #fefffe;
-    width: 28px;
-    height: 28px;
-    display: grid;
-    place-items: center;
-    text-decoration: none;
-    border-radius: 50%;
-  }
+  height: 450px;
+  width: 100%;
+  border-radius: 11px;
+  position: relative;
+  perspective: 33200px; /*1200px*/
+}
+
+.card:hover .card-front {
+  transform: rotateY(-180deg);
+}
+
+.card:hover .card-back {
+  transform: rotateY(0deg);
+}
+
+.card-front1,
+.card-front2,
+.card-front3,
+.card-front4,
+.card-front5,
+.card-front6,
+.card-front7,
+.card-front8,
+.card-front9,
+.card-front10,
+.card-front11,
+.card-front12,
+.card-back {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 16px 0 #858194;
+  position: absolute;
+  backface-visibility: hidden;
+  transition: transform 1s cubic-bezier(0.3, 0.6, 0.3, 1.2);
+}
+
+.card-front1 {
+  background: url("../images/pizza-hut-1599752151.jpg") center center/ cover
+    no-repeat;
+}
+
+.card-front2 {
+  background: url("../images/Hawaiian.jpg") center center/ cover
+    no-repeat;
+}
+.card-front3 {
+  background: url("../images/napoletana.jpg") center center/ cover
+    no-repeat;
+}
+.card-front4 {
+  background: url("../images/pepperoni.jpeg") center center/ cover
+    no-repeat;
+}
+.card-front5 {
+  background: url("../images/Bbqchicken.jpg") center center/ cover
+    no-repeat;
+}
+.card-front6 {
+  background: url("../images/Chicken-teriyaki-pizza-feature-image-IMG_0459-1536x1152.jpg") center center/ cover
+    no-repeat;
+}
+.card-front7 {
+  background: url("../images/pizza-hut-1599752151.jpg") center center/ cover
+    no-repeat;
+}
+.card-front8 {
+  background: url("../images/pizza-hut-1599752151.jpg") center center/ cover
+    no-repeat;
+}
+.card-front9 {
+  background: url("../images/pizza-hut-1599752151.jpg") center center/ cover
+    no-repeat;
+}
+.card-front10 {
+  background: url("../images/pizza-hut-1599752151.jpg") center center/ cover
+    no-repeat;
+}
+.card-front11 {
+  background: url("../images/pizza-hut-1599752151.jpg") center center/ cover
+    no-repeat;
+}
+.card-front12 {
+  background: url("../images/pizza-hut-1599752151.jpg") center center/ cover
+    no-repeat;
+}
+
+.card-back {
+  background: #fefffe;
+  color: #2d3047;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  transform: rotateY(180deg);
+}
+
+.profile-picture {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  padding: 5px;
+  background: linear-gradient(135deg, #f9e900, #ed33b9);
+}
+
+.bio .name {
+  font-size: 1.8rem;
+}
+
+.bio .title {
+  font-size: 1.2rem;
+}
+
+.icons {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.icons .icon {
+  background: linear-gradient(135deg, #f9e900, #ed33b9);
+  color: #fefffe;
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  border-radius: 50%;
+}
