@@ -30,13 +30,13 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">About</a>
+                            <a class="nav-link" href="#">About</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Menu</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Order</a>
+                            <a class="nav-link active" aria-current="page" href="#">Order</a>
                         </li>
 
                         <li class="nav-item">
@@ -49,107 +49,103 @@
                 </div>
             </div>
         </nav>
-        <form action="">
-            <div class="orderform">
-                <!-- Title -->
-                <div class="title">
-                    <h2 class="text-center">Order</h2>
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-3"></div>
+                <div class="col-6">
+                    <div class="form1">
+                        <form action="" class="form-control">
+                            <fieldset class="mb-3">
+                                <legend class="text-center">Place Order</legend>
+                                <select class="form-control" name="" id="">
+                                    <option disabled selected>Pizza Name</option>
+                                    <option value="">Cheese Pizza</option>
+                                    <option value="">Veggie</option>
+                                    <option value="">Pepperoni</option>
+                                    <option value="">Meat</option>
+                                    <option value="">Bbq Chicken</option>
+                                    <option value="">Margherita</option>
+                                    <option value="">Hawaiian</option>
+                                    <option value="">Boerewors</option>
+                                    <option value="">Napoletana</option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                </select>
+                            </fieldset>
+                            <fieldset class="mb-3">
+                                <select class="form-control" name="" id="">
+                                    <option disabled selected>Pizza Size</option>
+                                    <option value="">Small</option>
+                                    <option value="">Medium</option>
+                                    <option value="">Large</option>
+                                    <option value="">Mega</option>
+                                </select>
+                            </fieldset>
+
+                            <p class="text-center">-- Toppings --</p>
+
+                            <fieldset class="mb-2">
+                                <label class="checkbox-inline">
+                                    <input class="ms-5 me-2" type="checkbox" value="">Black Olives
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input class="ms-5 me-2" type="checkbox" value="">Sausage
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input class="ms-5 me-2" type="checkbox" value="">Extra Cheese
+                                </label>
+
+                            </fieldset>
+                            <fieldset>
+                                <label class="checkbox-inline">
+                                    <input class="ms-5 me-3" type="checkbox" value="">Mushroom
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input class="ms-5 me-4" type="checkbox" value="">Garlic
+                                </label>
+
+                                <label class="checkbox-inline">
+                                    <input class="ms-5 me-2" type="checkbox" value="">Basil
+                                </label>
+                            </fieldset>
+
+                            <fieldset>
+
+                                <div class=" mb-5 quantity">
+
+                                    <span class="text-center ms-5 me-4">Qty:</span>
+                                    <button class="minus-btn" type="button" name="button">
+                                        <img src="../images/minus.svg" alt="" />
+                                    </button>
+                                    <input type="text" name="name" value="1">
+                                    <button class="plus-btn" type="button" name="button">
+                                        <img src="../images/plus.svg" alt="" />
+                                    </button>
+                                    <div class=" mt-4 ms-4 total-price">
+                                        <span>Total is:</span>
+                                        <span class="ms-1">K</span>
+                                </div>
+                            </fieldset>
+                            <fieldset class="text-center mb">
+                                <input class="btn btn-primary mb-4 me-3" type="submit" value="Checkout">
+                                <input class="btn btn-primary mb-4" type="button" value="Add Order">
+                            </fieldset>
+                        </form>
+                    </div>
+
+                    <div class="form2">
+                        <form action="" class="form-control">
+
+                        </form>
+                    </div>
                 </div>
-
-                <!-- Product #1 -->
-                <div class="item">
-                    <div class="buttons">
-                        <input type="checkbox" name="" id="">
-                    </div>
-
-                    <div class="image">
-                        <img src="item-1.png" alt="" />
-                    </div>
-
-                    <div class="description">
-                        <span>Pizza1</span>
-                        <span>Availability</span>
-                        <span>Sauces</span>
-                    </div>
-
-                    <div class="quantity">
-                        <button class="minus-btn" type="button" name="button">
-                            <img src="../images/minus.svg" alt="" />
-                        </button>
-                        <input type="text" name="name" value="1">
-                        <button class="plus-btn" type="button" name="button">
-                            <img src="../images/plus.svg" alt="" />
-                        </button>
-
-                    </div>
-
-                    <div class="total-price">Ksh</div>
-                </div>
-
-                <!-- Product #2 -->
-                <div class="item">
-                    <div class="buttons">
-                        <input type="checkbox" name="" id="">
-                    </div>
-
-                    <div class="image">
-                        <img src="item-2.png" alt="" />
-                    </div>
-
-                    <div class="description">
-                        <span>Pizza</span>
-                        <span>Availability</span>
-                        <span>Sauce</span>
-                    </div>
-
-                    <div class="quantity">
-                        <button class="minus-btn" type="button" name="button">
-                            <img src="../images/minus.svg" alt="" />
-                        </button>
-                        <input type="text" name="name" value="1">
-                        <button class="plus-btn" type="button" name="button">
-                            <img src="../images/plus.svg" alt="" />
-                        </button>
-
-                    </div>
-
-                    <div class="total-price">Ksh</div>
-                </div>
-
-                <!-- Product #3 -->
-                <div class="item">
-                    <div class="buttons">
-                        <input type="checkbox" name="" id="">
-                    </div>
-
-                    <div class="image">
-                        <img src="item-3.png" alt="" />
-                    </div>
-
-                    <div class="description">
-                        <span>Pizza</span>
-                        <span>Available</span>
-                        <span>Sauce</span>
-                    </div>
-
-                    <div class="quantity">
-                        <button class="minus-btn" type="button" name="button">
-                            <img src="../images/minus.svg" alt="" />
-                        </button>
-                        <input type="text" name="name" value="1">
-                        <button class="plus-btn" type="button" name="button">
-                            <img src="../images/plus.svg" alt="" />
-                        </button>
-                    </div>
-
-                    <div class="total-price">Ksh</div>
-                </div>
+                <div class="col-3"></div>
             </div>
 
-            <input class="btn btn-primary d-block mx-auto" type="submit" value="Order Now">
-        </form>
-
-
+        </div>
 
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
             integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
@@ -159,6 +155,8 @@
         </script>
         <script src="https://code.jquery.com/jquery-3.6.0.js"
             integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="../JS/jquery-2.2.4.min.js"></script>
+        <script type="text/javascript" src="../JS/jquery.multi-select.js"></script>
         <script src="../JS/order.js"></script>
 </body>
 

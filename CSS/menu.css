@@ -1,3 +1,6 @@
+*{
+  background-color: #ffeb2b;
+}
 /*Navbar*/
 .navbar-toggler {
     width: 20px;
@@ -78,3 +81,80 @@
 }
 
 /*Navbar-end*/
+
+
+.card {
+    height: 450px;
+    width: 100%;
+    border-radius: 11px;
+    position: relative;
+    perspective: 33200px;/*1200px*/
+  }
+  
+  .card:hover .card-front {
+    transform: rotateY(-180deg);
+  }
+  
+  .card:hover .card-back {
+    transform: rotateY(0deg);
+  }
+  
+  .card-front,
+  .card-back {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 16px 0 #858194;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: transform 1s cubic-bezier(0.3, 0.6, 0.3, 1.2);
+  }
+  
+  .card-front {
+    background: url("../images/pizza-hut-1599752151.jpg")center center/ cover no-repeat;
+  }
+  
+  .card-back {
+    background: #fefffe;
+    color: #2d3047;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    transform: rotateY(180deg);
+  }
+  
+  .profile-picture {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    padding: 5px;
+    background: linear-gradient(135deg, #f9e900, #ed33b9);
+  }
+  
+  .bio .name {
+    font-size: 1.8rem;
+  }
+  
+  .bio .title {
+    font-size: 1.2rem;
+  }
+  
+  .icons {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  .icons .icon {
+    background: linear-gradient(135deg, #f9e900, #ed33b9);
+    color: #fefffe;
+    width: 28px;
+    height: 28px;
+    display: grid;
+    place-items: center;
+    text-decoration: none;
+    border-radius: 50%;
+  }
