@@ -89,10 +89,12 @@ const saveTotal = (eachOrder) => {
   return totalArray;
 };
 
-$(document).ready(() => {
+const totalOrder = (nums) =>
+  nums.reduce((total, initial) => total + initial);
 
+$(document).ready(() => {
   //Display current total
-  $('.quantity').mouseleave(()=>{
+  $(".quantity").mouseleave(() => {
     const pizzaName = $("#pizzas").val();
     const pizzaSize = $("#sizes").val();
     const pizzaCrust = $("#crusts").val();
@@ -105,11 +107,10 @@ $(document).ready(() => {
       pizzaName,
       pizzaQuantity
     );
-    $('.totals').text(`Ksh ${newPizza.currentPrice()}`);
+    $(".totals").text(`Ksh ${newPizza.currentPrice()}`);
   });
 
   $(".orderform").submit((e) => {
-
     const pizzaName = $("#pizzas").val();
     const pizzaSize = $("#sizes").val();
     const pizzaCrust = $("#crusts").val();
@@ -122,17 +123,12 @@ $(document).ready(() => {
       pizzaName,
       pizzaQuantity
     );
-  
-
-    
-    console.log(newPizza);
     e.preventDefault();
     $(".form1").hide();
     $(".form2").show();
   });
 
   $("#addpizza").click((e) => {
-
     const pizzaName = $("#pizzas").val();
     const pizzaSize = $("#sizes").val();
     const pizzaCrust = $("#crusts").val();
@@ -148,8 +144,7 @@ $(document).ready(() => {
 
     allOrders.push(newPizza.orderSummary());
     $(".orderform")[0].reset();
-    $(".totals").text('');
-
+    $(".totals").text("");
   });
 
   $(".pickup").click((e) => {
@@ -165,22 +160,31 @@ $(document).ready(() => {
       pizzaName,
       pizzaQuantity
     );
-    alert(`Hey your total is ${newPizza.currentPrice()}.Pick up your Pizza in the next hour`);
+    alert(
+      `Hey your total is ${newPizza.currentPrice()}.Pick up your Pizza in the next hour`
+    );
 
-    $('.form2').hide();
-    $('.form1').show();
+    $(".form2").hide();
+    $(".form1").show();
   });
 
-  $('.home').click((e)=>{
-    $('.form2').hide();
-    $('.form3').show();
+  $(".home").click((e) => {
+    $(".form2").hide();
+    $(".form3").show();
   });
 
-  $('.check').submit((e)=>{
-    $('.form3').hide();
-    $('.checkout').show();
-  })
+  $(".checkout").click((e) => {
+  
+    e.preventDefault();
+    const userName = $(".name").val();
+    const userNumber = $(".number").val();
+    const userLocation = $(".prompt").val();
+    $(".form3").hide();
+    $('.form4').text(`Your total order is ${totalOrder(saveTotal())}`)
+    $(".form4").show();
+  });
 
+  
 });
 
 $(document).ready(() => {
