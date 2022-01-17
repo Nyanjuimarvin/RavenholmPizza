@@ -72,9 +72,9 @@ const totalOrder = (nums) => nums.reduce((total, initial) => total + initial);
 const allOrders = [];
 
 //Free array
-const deleteElement = (element) =>{
-  return element.length = 0;
-}
+const deleteElement = (element) => {
+  return (element.length = 0);
+};
 
 //Return all orders as a string
 const outputOrders = (ordersArray) => {
@@ -118,20 +118,26 @@ $(document).ready(() => {
     const pizzaSize = $("#sizes").val();
     const pizzaCrust = $("#crusts").val();
     const pizzaQuantity = parseInt($(".qty").val());
-
-    const newPizza = new Pizza(
-      pizzaSize,
-      pizzaCrust,
-      pizzaToppings(),
-      pizzaName,
-      pizzaQuantity
-    );
     e.preventDefault();
 
-    allOrders.push(newPizza.orderSummary());
-    totalArray.push(newPizza.currentPrice());
-    $(".form1").hide();
-    $(".form2").show();
+    if (pizzaName !== null && pizzaSize !== null && pizzaCrust !== null) {
+      const newPizza = new Pizza(
+        pizzaSize,
+        pizzaCrust,
+        pizzaToppings(),
+        pizzaName,
+        pizzaQuantity
+      );
+
+      allOrders.push(newPizza.orderSummary());
+      totalArray.push(newPizza.currentPrice());
+      $(".form1").hide();
+      $(".form2").show();
+    } else {
+      $(".orderform").trigger("reset");
+      $(".totals").text("");
+      swal("Please fill all the required Fields");
+    }
   });
 
   // Order multiple
@@ -141,18 +147,22 @@ $(document).ready(() => {
     const pizzaCrust = $("#crusts").val();
     const pizzaQuantity = parseInt($(".qty").val());
 
-    const newPizza = new Pizza(
-      pizzaSize,
-      pizzaCrust,
-      pizzaToppings(),
-      pizzaName,
-      pizzaQuantity
-    );
+    if (pizzaName !== null && pizzaSize !== null && pizzaCrust !== null) {
+      const newPizza = new Pizza(
+        pizzaSize,
+        pizzaCrust,
+        pizzaToppings(),
+        pizzaName,
+        pizzaQuantity
+      );
 
-    allOrders.push(newPizza.orderSummary());
-    totalArray.push(newPizza.currentPrice());
-    $(".orderform")[0].reset();
-    $(".totals").text("");
+      allOrders.push(newPizza.orderSummary());
+      totalArray.push(newPizza.currentPrice());
+      $(".orderform")[0].reset();
+      $(".totals").text("");
+    } else {
+      swal("Kindly Place an Order before adding another");
+    }
   });
 
   //Pick-up option
@@ -179,6 +189,8 @@ $(document).ready(() => {
       footer: "ps: Stay Safe",
     });
 
+    allOrders.splice(0, allOrders.length);
+    totalArray.splice(0, totalArray.length);
     $(".orderform").trigger("reset");
     $(".totals").text("");
     $(".form2").hide();
@@ -192,17 +204,24 @@ $(document).ready(() => {
 
   //Delivery option
   $(".checkout").click((e) => {
+    const userName = $(".name").val();
+    const userNumber = $(".number").val();
+    const userLocation = $(".prompt").val();
     e.preventDefault();
+    if (userName !== '' && userNumber !== '' && userLocation !== '') {
+      $(".insertafter").append(
+        [
+          `<p>${outputOrders(allOrders)}</p>`,
+          `<p>Total: ${totalOrder(totalArray)}</p>`,
+        ].join("")
+      );
 
-    $(".insertafter").append(
-      [
-        `<p>${outputOrders(allOrders)}</p>`,
-        `<p>Total: ${totalOrder(totalArray)}</p>`,
-      ].join("")
-    );
-
-    $(".form3").hide();
-    $(".appendix").show();
+      $(".form3").hide();
+      $(".appendix").show();
+    } else {
+      swal("Please enter your Credentials");
+      $('.homeform').trigger("reset");
+    }
   });
 });
 
