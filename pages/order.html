@@ -57,7 +57,7 @@
                 <div class="col-3"></div>
                 <div class="col-6 form">
                     <div class="form1">
-                        <form action="" class="orderform form-control bg-black bg-opacity-75">
+                        <form action="" class="orderform form-control bg-black bg-opacity-75 text-white">
                             <fieldset class="mb-3">
                                 <legend class="text-center">Place Order</legend>
                                 <select class="form-control" name="" id="pizzas">
@@ -142,7 +142,7 @@
                                     </div>
                             </fieldset>
                             <fieldset class="text-center mb">
-                                <input class="btn btn-primary mb-4 me-3" type="submit" value="Checkout">
+                                <input class="btn btn-primary mb-4 me-3" type="submit" value="Continue">
                                 <input class="btn btn-primary mb-4" id="addpizza" type="button" value="Add Order">
                             </fieldset>
                         </form>
@@ -151,23 +151,23 @@
                     <div class="form2">
                         <form action="" class="form-control bg-black bg-opacity-75">
                             <fieldset class="text-center">
-                                <legend>How Will you Pizza get to you?</legend>
-                                <input class="home btn btn-primary mb-3" type="button" value="Home delivery">
-                                <input class="pickup btn btn-primary mb-4" type="button" value="Pickup">
+                                <legend class="text-white">How Will you Pizza get to you?</legend>
+                                <input class="home btn btn-primary mb-3 me-2" type="button" value="Delivery">
+                                <input class="pickup btn btn-primary mb-3" type="button" value="Pickup">
                             </fieldset>
                         </form>
                     </div>
 
                     <div class="form3">
-                        <form class="form-control bg-black bg-opacity-75 check" action="">
+                        <form class="form-control bg-black bg-opacity-75 check text-white" action="">
                             <fieldset>
                                 <legend class="text-center">Fill in credentials</legend>
                                 <div class="row ms-4 mb-3 g-2"> 
-                                    <input class="col-sm-5 ms-2 me-5" type="text" name="" id="">
-                                    <input class="col-sm-5" type="tel" name="" id="">
+                                    <input class="col-sm-5 ms-2 me-5" type="text" placeholder="Your Name..." name="" id="">
+                                    <input class="col-sm-5" type="tel" placeholder="Your phone number..." name="" id="">
                                 </div>
                                 <div class="row ms-4">
-                                    <input class="col-sm-11 mb-3 g-2 ms-2" type="text" name="" id="">
+                                    <input class="prompt col-sm-11 mb-3 g-2 ms-2" placeholder="Your Location..." type="text" name="" id="">
                                 </div>
                             </fieldset>
                             <input class="btn btn-primary d-block mx-auto" type="submit" value="checkout">
@@ -176,9 +176,9 @@
 
                     <div class="checkout">
 
-                        <form class="form-control bg-black bg-opacity-75" action="">
+                        <div class="form-control bg-black bg-opacity-75 text-white">
                             <input class="d-block mx-auto btn btn-primary" type="submit" value="Finish">
-                        </form>
+                        </div>
                     </div>
 
                 </div>

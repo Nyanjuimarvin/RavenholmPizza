@@ -91,7 +91,20 @@ const saveTotal = (eachOrder) => {
 
 $(document).ready(() => {
 
-  $('.qty, minus-btn,plus-btn').mouseleave(()=>{
+  //Display current total
+  $('.quantity').mouseleave(()=>{
+    const pizzaName = $("#pizzas").val();
+    const pizzaSize = $("#sizes").val();
+    const pizzaCrust = $("#crusts").val();
+    const pizzaQuantity = parseInt($(".qty").val());
+
+    const newPizza = new Pizza(
+      pizzaSize,
+      pizzaCrust,
+      pizzaToppings(),
+      pizzaName,
+      pizzaQuantity
+    );
     $('.totals').text(`Ksh ${newPizza.currentPrice()}`);
   });
 
@@ -119,7 +132,24 @@ $(document).ready(() => {
   });
 
   $("#addpizza").click((e) => {
+
+    const pizzaName = $("#pizzas").val();
+    const pizzaSize = $("#sizes").val();
+    const pizzaCrust = $("#crusts").val();
+    const pizzaQuantity = parseInt($(".qty").val());
+
+    const newPizza = new Pizza(
+      pizzaSize,
+      pizzaCrust,
+      pizzaToppings(),
+      pizzaName,
+      pizzaQuantity
+    );
+
+    allOrders.push(newPizza.orderSummary());
     $(".orderform")[0].reset();
+    $(".totals").text('');
+
   });
 
   $(".pickup").click((e) => {
@@ -135,6 +165,7 @@ $(document).ready(() => {
     $('.form3').hide();
     $('.checkout').show();
   })
+
 });
 
 $(document).ready(() => {
