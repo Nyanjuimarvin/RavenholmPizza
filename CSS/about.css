@@ -1,20 +1,23 @@
 @font-face {
-  font-family: "Intro Head R Base";
-  src: url("//db.onlinewebfonts.com/t/3d73f9bb18a25ef77e5daf3e671e66ac.eot");
-  src: url("//db.onlinewebfonts.com/t/3d73f9bb18a25ef77e5daf3e671e66ac.eot?#iefix")
+  font-family: "LiebeErika";
+  src: url("//db.onlinewebfonts.com/t/9897e38317b3a3c0a35153fcc9298387.eot");
+  src: url("//db.onlinewebfonts.com/t/9897e38317b3a3c0a35153fcc9298387.eot?#iefix")
       format("embedded-opentype"),
-    url("//db.onlinewebfonts.com/t/3d73f9bb18a25ef77e5daf3e671e66ac.woff2")
+    url("//db.onlinewebfonts.com/t/9897e38317b3a3c0a35153fcc9298387.woff2")
       format("woff2"),
-    url("//db.onlinewebfonts.com/t/3d73f9bb18a25ef77e5daf3e671e66ac.woff")
+    url("//db.onlinewebfonts.com/t/9897e38317b3a3c0a35153fcc9298387.woff")
       format("woff"),
-    url("//db.onlinewebfonts.com/t/3d73f9bb18a25ef77e5daf3e671e66ac.ttf")
+    url("//db.onlinewebfonts.com/t/9897e38317b3a3c0a35153fcc9298387.ttf")
       format("truetype"),
-    url("//db.onlinewebfonts.com/t/3d73f9bb18a25ef77e5daf3e671e66ac.svg#Intro Head R Base")
+    url("//db.onlinewebfonts.com/t/9897e38317b3a3c0a35153fcc9298387.svg#LiebeErika")
       format("svg");
 }
-* {
-    font-family: Intro Head R Base,sans-serif;
+
+*{
+  font-family: LiebeErika,sans-serif;
+  font-size: 24px;
 }
+
 /*Navbar*/
 .navbar-toggler {
   width: 20px;
@@ -99,3 +102,4 @@
 }
 
 /*Navbar-end*/
+

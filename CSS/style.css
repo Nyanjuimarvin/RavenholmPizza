@@ -15,7 +15,7 @@
 
 *{
   font-family: LiebeErika,sans-serif;
-  font-size: 40px;
+  font-size: 24px;
 }
 /*Navbar*/
 .navbar-toggler {
@@ -99,7 +99,7 @@
 /*Navbar-end*/
 
 .head {
-  background: url(../images/pizzabckg.jpg);
+  background: url(../images/pizzabckg.jpg)fixed;
   background-size: cover;
   height: 560px;
 }

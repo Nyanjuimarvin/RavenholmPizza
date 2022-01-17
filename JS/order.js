@@ -71,6 +71,11 @@ const totalOrder = (nums) => nums.reduce((total, initial) => total + initial);
 //Array to push currentOrder
 const allOrders = [];
 
+//Free array
+const deleteElement = (element) =>{
+  return element.length = 0;
+}
+
 //Return all orders as a string
 const outputOrders = (ordersArray) => {
   return ordersArray.toString();
@@ -114,14 +119,6 @@ $(document).ready(() => {
     const pizzaCrust = $("#crusts").val();
     const pizzaQuantity = parseInt($(".qty").val());
 
-    if (
-      pizzaCrust === "Select Pizza Crust" ||
-      pizzaName === "Select Pizza Name" ||
-      pizzaSize === "Select Pizza Size"
-    ) {
-      alert("Choose a pizza");
-    }
-
     const newPizza = new Pizza(
       pizzaSize,
       pizzaCrust,
@@ -130,6 +127,9 @@ $(document).ready(() => {
       pizzaQuantity
     );
     e.preventDefault();
+
+    allOrders.push(newPizza.orderSummary());
+    totalArray.push(newPizza.currentPrice());
     $(".form1").hide();
     $(".form2").show();
   });
@@ -171,7 +171,7 @@ $(document).ready(() => {
     );
 
     swal({
-      title: `Hey there your total is ${newPizza.currentPrice()}`,
+      title: `Hey there your total is ${totalOrder(totalArray)}`,
       text: "Thanks for ordering. Be sure to pick-up in the next hour",
       imageUrl: "../images/cat-dj.gif",
       imageHeight: 200,
@@ -179,7 +179,7 @@ $(document).ready(() => {
       footer: "ps: Stay Safe",
     });
 
-    $(".placeorder").trigger("reset");
+    $(".orderform").trigger("reset");
     $(".totals").text("");
     $(".form2").hide();
     $(".form1").show();
@@ -193,29 +193,39 @@ $(document).ready(() => {
   //Delivery option
   $(".checkout").click((e) => {
     e.preventDefault();
-    const pizzaName = $("#pizzas").val();
-    const pizzaSize = $("#sizes").val();
-    const pizzaCrust = $("#crusts").val();
-    const pizzaQuantity = parseInt($(".qty").val());
 
-    const newPizza = new Pizza(
-      pizzaSize,
-      pizzaCrust,
-      pizzaToppings(),
-      pizzaName,
-      pizzaQuantity
-    );
-
-    $(".appendix").append(
+    $(".insertafter").append(
       [
         `<p>${outputOrders(allOrders)}</p>`,
-        `<p>Total: ${totalOrder(totalArray)}</p>`
-      ].join('')
+        `<p>Total: ${totalOrder(totalArray)}</p>`,
+      ].join("")
     );
-      $(".form3").hide();
+
+    $(".form3").hide();
     $(".appendix").show();
   });
+});
 
+$(".processorder").click((e) => {
+  const userName = $(".name").val();
+  const userNumber = $(".number").val();
+  const userLocation = $(".prompt").val();
+
+  swal({
+    title: `Hey ${userName} your total is ${totalOrder(totalArray)}`,
+    text: `Thanks for ordering. Your order will be delivered to ${userLocation}`,
+    imageUrl: "../images/cat-dj.gif",
+    imageHeight: 200,
+    imageWidth: 300,
+    footer: "ps: Stay Safe",
+  });
+
+  allOrders.splice(0, allOrders.length);
+  totalArray.splice(0, totalArray.length);
+  $(".summary").hide();
+  $(".orderform").trigger("reset");
+  $(".totals").text("");
+  $(".form1").show();
 });
 
 $(document).ready(() => {
