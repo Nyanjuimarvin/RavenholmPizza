@@ -9,15 +9,13 @@ class Pizza {
 
   splitToppings() {
     const { toppings } = this;
-    for (let top of toppings) {
-      return top;
-    }
-  }
-  currentOrder() {
-    const { size, crust, toppings, name, quantity } = this;
-    return `Name:${name} ,Size:${size},Quantity:${quantity}, Crust:${crust}, Toppings:${this.splitToppings()}`;
+    return toppings.toString();
   }
 
+  currentOrder() {
+    const { size, crust, name, quantity } = this;
+    return `Name:${name} ,Size:${size},Quantity:${quantity}, Crust:${crust}, Toppings:${this.splitToppings()}`;
+  }
 
   buildPrice() {
     const { size } = this;
@@ -37,11 +35,11 @@ class Pizza {
       crustPrice = crustArray[2];
       toppingsPrice = toppingsArray[2];
       sizePrice = sizeArray[2];
-    } else if (size === "small"){
+    } else if (size === "small") {
       crustPrice = crustArray[3];
       toppingsPrice = toppingsArray[3];
       sizePrice = sizeArray[3];
-    }else{
+    } else {
       crustPrice = null;
       toppingsPrice = null;
       sizePrice = null;
@@ -50,16 +48,9 @@ class Pizza {
     return crustPrice + toppingsPrice + sizePrice;
   }
 
-  toppingsPrice() {
-    const { toppings } = this;
-    return (
-      toppings.length *
-      toppingsArray.reduce((total, initial) => total + initial)
-    );
-  }
   currentPrice() {
-    const { size, crust, quantity } = this;
-    return (size + crust + this.toppingsPrice()) * quantity;
+    const { quantity } = this;
+    return (this.buildPrice()) * quantity;
   }
 
   orderSummary() {
@@ -78,25 +69,34 @@ const totalArray = [];
 const allOrders = [];
 
 //function to check if .checked === true
-const pizzaToppings = ()=> {
-  const nodeList = document.getElementsByClassName('toppings');
+const pizzaToppings = () => {
+  const nodeList = document.getElementsByClassName("toppings");
   const arr = [];
 
   for (let i of nodeList) {
     if (i.checked !== false) arr.push(i.value);
   }
   return arr;
-}
-
-//form elements
-const pizzaName = document.querySelector("#pizzas");
-const pizzaSize = document.querySelector("#sizes");
-const pizzaCrust = document.querySelector("#crusts");
-const pizzaQuantity = document.querySelector(".qty");
-
+};
+const save = (orders) => {
+  allOrders.push(orders);
+  return allOrders;
+};
 
 $(document).ready(() => {
   $(".orderform").submit(function (e) {
+    const pizzaName = $("#pizzas").val();
+    const pizzaSize = $("#sizes").val();
+    const pizzaCrust = $("#crusts").val();
+    const pizzaQuantity = parseInt($(".qty").val());
+    const newPizzas = new Pizza(
+      pizzaSize,
+      pizzaCrust,
+      pizzaToppings(),
+      pizzaName,
+      pizzaQuantity
+    );
+    console.log(newPizzas.currentOrder());
     e.preventDefault();
     $(".form1").hide();
     $(".form2").show();
