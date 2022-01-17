@@ -149,6 +149,6 @@ button[class*="btn"] {
   font-weight: 300;
 }
 
-.form2, .form3{
+.form2, .form3, .appendix{
   display: none;
 }

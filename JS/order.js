@@ -90,7 +90,6 @@ const pizzaToppings = () => {
 //User interface
 
 $(document).ready(() => {
-
   //Display current total
   $(".quantity").mouseleave(() => {
     const pizzaName = $("#pizzas").val();
@@ -109,11 +108,19 @@ $(document).ready(() => {
   });
 
   //Order once
-  $(".orderform").submit((e) => {
+  $(".orderform").on("submit", (e) => {
     const pizzaName = $("#pizzas").val();
     const pizzaSize = $("#sizes").val();
     const pizzaCrust = $("#crusts").val();
     const pizzaQuantity = parseInt($(".qty").val());
+
+    if (
+      pizzaCrust === "Select Pizza Crust" ||
+      pizzaName === "Select Pizza Name" ||
+      pizzaSize === "Select Pizza Size"
+    ) {
+      alert("Choose a pizza");
+    }
 
     const newPizza = new Pizza(
       pizzaSize,
@@ -164,16 +171,14 @@ $(document).ready(() => {
     );
 
     swal({
-      title:`Hey there your total is ${newPizza.currentPrice()}`,
-      text:"Thanks for ordering. Be sure to pick-up in the next hour",
-      imageUrl : "../images/cat-dj.gif",
+      title: `Hey there your total is ${newPizza.currentPrice()}`,
+      text: "Thanks for ordering. Be sure to pick-up in the next hour",
+      imageUrl: "../images/cat-dj.gif",
       imageHeight: 200,
       imageWidth: 300,
-      footer: "ps: Stay Safe"
- });
-   // swal(
-     // `Hey your total is ${newPizza.currentPrice()}.Pick up your Pizza in the next hour`
-    //);
+      footer: "ps: Stay Safe",
+    });
+
     $(".placeorder").trigger("reset");
     $(".totals").text("");
     $(".form2").hide();
@@ -200,13 +205,18 @@ $(document).ready(() => {
       pizzaName,
       pizzaQuantity
     );
-    const userName = $(".name").val();
-    const userNumber = $(".number").val();
-    const userLocation = $(".prompt").val();
+
+    $(".appendix").append(
+      [
+        `<p>${outputOrders(allOrders)}</p>`,
+        `<p>Total: ${totalOrder(totalArray)}</p>`
+      ].join('')
+    );
+      $(".form3").hide();
+    $(".appendix").show();
   });
+
 });
-
-
 
 $(document).ready(() => {
   //plus button logic
