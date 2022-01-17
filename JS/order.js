@@ -50,11 +50,11 @@ class Pizza {
 
   currentPrice() {
     const { quantity } = this;
-    return (this.buildPrice()) * quantity;
+    return this.buildPrice() * quantity;
   }
 
   orderSummary() {
-    return `${this.currentOrder}  ${this.currentPrice}`;
+    return `${this.currentOrder()}  ${this.currentPrice()}`;
   }
 }
 
@@ -78,25 +78,41 @@ const pizzaToppings = () => {
   }
   return arr;
 };
-const save = (orders) => {
-  allOrders.push(orders);
+
+const saveOrder = (orders) => {
+  allOrders.push(`orders`);
   return allOrders;
 };
 
+const saveTotal = (eachOrder) => {
+  totalArray.push(eachOrder);
+  return totalArray;
+};
+
 $(document).ready(() => {
-  $(".orderform").submit(function (e) {
+
+  $('.qty, minus-btn,plus-btn').mouseleave(()=>{
+    $('.totals').text(`Ksh ${newPizza.currentPrice()}`);
+  });
+
+  $(".orderform").submit((e) => {
+
     const pizzaName = $("#pizzas").val();
     const pizzaSize = $("#sizes").val();
     const pizzaCrust = $("#crusts").val();
     const pizzaQuantity = parseInt($(".qty").val());
-    const newPizzas = new Pizza(
+
+    const newPizza = new Pizza(
       pizzaSize,
       pizzaCrust,
       pizzaToppings(),
       pizzaName,
       pizzaQuantity
     );
-    console.log(newPizzas.currentOrder());
+  
+
+    
+    console.log(newPizza);
     e.preventDefault();
     $(".form1").hide();
     $(".form2").show();
@@ -105,6 +121,20 @@ $(document).ready(() => {
   $("#addpizza").click((e) => {
     $(".orderform")[0].reset();
   });
+
+  $(".pickup").click((e) => {
+    alert(`Hey,Your order is ready Pick it up in the next hour`);
+  });
+
+  $('.home').click((e)=>{
+    $('.form2').hide();
+    $('.form3').show();
+  });
+
+  $('.check').submit((e)=>{
+    $('.form3').hide();
+    $('.checkout').show();
+  })
 });
 
 $(document).ready(() => {
