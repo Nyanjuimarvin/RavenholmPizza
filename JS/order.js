@@ -14,7 +14,7 @@ class Pizza {
 
   currentOrder() {
     const { size, crust, name, quantity } = this;
-    return `Name:${name} ,Size:${size},Quantity:${quantity}, Crust:${crust}, Toppings:${this.splitToppings()}`;
+    return `Name:${name} Size:${size} Quantity:${quantity} Crust:${crust} Toppings:${this.splitToppings()}`;
   }
 
   buildPrice() {
@@ -54,7 +54,7 @@ class Pizza {
   }
 
   orderSummary() {
-    return `${this.currentOrder()}  ${this.currentPrice()}`;
+    return ` ${this.currentOrder()}  Price: ${this.currentPrice()} `;
   }
 }
 
@@ -65,8 +65,16 @@ const sizeArray = [400, 300, 200, 100];
 //Array to push currentPrice
 const totalArray = [];
 
+//Return total for multiple orders
+const totalOrder = (nums) => nums.reduce((total, initial) => total + initial);
+
 //Array to push currentOrder
 const allOrders = [];
+
+//Return all orders as a string
+const outputOrders = (ordersArray) => {
+  return ordersArray.toString();
+};
 
 //function to check if .checked === true
 const pizzaToppings = () => {
@@ -79,20 +87,10 @@ const pizzaToppings = () => {
   return arr;
 };
 
-const saveOrder = (orders) => {
-  allOrders.push(`orders`);
-  return allOrders;
-};
-
-const saveTotal = (eachOrder) => {
-  totalArray.push(eachOrder);
-  return totalArray;
-};
-
-const totalOrder = (nums) =>
-  nums.reduce((total, initial) => total + initial);
+//User interface
 
 $(document).ready(() => {
+
   //Display current total
   $(".quantity").mouseleave(() => {
     const pizzaName = $("#pizzas").val();
@@ -110,6 +108,7 @@ $(document).ready(() => {
     $(".totals").text(`Ksh ${newPizza.currentPrice()}`);
   });
 
+  //Order once
   $(".orderform").submit((e) => {
     const pizzaName = $("#pizzas").val();
     const pizzaSize = $("#sizes").val();
@@ -128,6 +127,7 @@ $(document).ready(() => {
     $(".form2").show();
   });
 
+  // Order multiple
   $("#addpizza").click((e) => {
     const pizzaName = $("#pizzas").val();
     const pizzaSize = $("#sizes").val();
@@ -143,10 +143,12 @@ $(document).ready(() => {
     );
 
     allOrders.push(newPizza.orderSummary());
+    totalArray.push(newPizza.currentPrice());
     $(".orderform")[0].reset();
     $(".totals").text("");
   });
 
+  //Pick-up option
   $(".pickup").click((e) => {
     const pizzaName = $("#pizzas").val();
     const pizzaSize = $("#sizes").val();
@@ -160,10 +162,20 @@ $(document).ready(() => {
       pizzaName,
       pizzaQuantity
     );
-    alert(
-      `Hey your total is ${newPizza.currentPrice()}.Pick up your Pizza in the next hour`
-    );
 
+    swal({
+      title:`Hey there your total is ${newPizza.currentPrice()}`,
+      text:"Thanks for ordering. Be sure to pick-up in the next hour",
+      imageUrl : "../images/cat-dj.gif",
+      imageHeight: 200,
+      imageWidth: 300,
+      footer: "ps: Stay Safe"
+ });
+   // swal(
+     // `Hey your total is ${newPizza.currentPrice()}.Pick up your Pizza in the next hour`
+    //);
+    $(".placeorder").trigger("reset");
+    $(".totals").text("");
     $(".form2").hide();
     $(".form1").show();
   });
@@ -173,19 +185,28 @@ $(document).ready(() => {
     $(".form3").show();
   });
 
+  //Delivery option
   $(".checkout").click((e) => {
-  
     e.preventDefault();
+    const pizzaName = $("#pizzas").val();
+    const pizzaSize = $("#sizes").val();
+    const pizzaCrust = $("#crusts").val();
+    const pizzaQuantity = parseInt($(".qty").val());
+
+    const newPizza = new Pizza(
+      pizzaSize,
+      pizzaCrust,
+      pizzaToppings(),
+      pizzaName,
+      pizzaQuantity
+    );
     const userName = $(".name").val();
     const userNumber = $(".number").val();
     const userLocation = $(".prompt").val();
-    $(".form3").hide();
-    $('.form4').text(`Your total order is ${totalOrder(saveTotal())}`)
-    $(".form4").show();
   });
-
-  
 });
+
+
 
 $(document).ready(() => {
   //plus button logic
