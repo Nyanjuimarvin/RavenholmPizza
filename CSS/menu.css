@@ -1,3 +1,23 @@
+@font-face {
+  font-family: "LiebeErika";
+  src: url("//db.onlinewebfonts.com/t/9897e38317b3a3c0a35153fcc9298387.eot");
+  src: url("//db.onlinewebfonts.com/t/9897e38317b3a3c0a35153fcc9298387.eot?#iefix")
+      format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/9897e38317b3a3c0a35153fcc9298387.woff2")
+      format("woff2"),
+    url("//db.onlinewebfonts.com/t/9897e38317b3a3c0a35153fcc9298387.woff")
+      format("woff"),
+    url("//db.onlinewebfonts.com/t/9897e38317b3a3c0a35153fcc9298387.ttf")
+      format("truetype"),
+    url("//db.onlinewebfonts.com/t/9897e38317b3a3c0a35153fcc9298387.svg#LiebeErika")
+      format("svg");
+}
+
+*{
+  font-family: LiebeErika,sans-serif;
+  font-size: 30px;
+}
+
 /*Navbar*/
 .navbar-toggler {
   width: 20px;
@@ -159,15 +179,15 @@
     no-repeat;
 }
 .card-front10 {
-  background: url("../images/pizza-hut-1599752151.jpg") center center/ cover
+  background: url("../images/Cheeseburger-Pizza.jpg") center center/ cover
     no-repeat;
 }
 .card-front11 {
-  background: url("../images/pizza-hut-1599752151.jpg") center center/ cover
+  background: url("../images/meat2.jpg") center center/ cover
     no-repeat;
 }
 .card-front12 {
-  background: url("../images/pizza-hut-1599752151.jpg") center center/ cover
+  background: url("../images/meat.jpeg") center center/ cover
     no-repeat;
 }
 

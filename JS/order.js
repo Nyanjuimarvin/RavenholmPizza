@@ -153,7 +153,22 @@ $(document).ready(() => {
   });
 
   $(".pickup").click((e) => {
-    alert(`Hey,Your order is ready Pick it up in the next hour`);
+    const pizzaName = $("#pizzas").val();
+    const pizzaSize = $("#sizes").val();
+    const pizzaCrust = $("#crusts").val();
+    const pizzaQuantity = parseInt($(".qty").val());
+
+    const newPizza = new Pizza(
+      pizzaSize,
+      pizzaCrust,
+      pizzaToppings(),
+      pizzaName,
+      pizzaQuantity
+    );
+    alert(`Hey your total is ${newPizza.currentPrice()}.Pick up your Pizza in the next hour`);
+
+    $('.form2').hide();
+    $('.form1').show();
   });
 
   $('.home').click((e)=>{
