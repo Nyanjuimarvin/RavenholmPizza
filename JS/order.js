@@ -71,11 +71,6 @@ const totalOrder = (nums) => nums.reduce((total, initial) => total + initial);
 //Array to push currentOrder
 const allOrders = [];
 
-//Free array
-const deleteElement = (element) => {
-  return (element.length = 0);
-};
-
 //Return all orders as a string
 const outputOrders = (ordersArray) => {
   return ordersArray.toString();

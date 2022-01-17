@@ -10,7 +10,7 @@ These languages used are:
 
 - HTML5 - Used to define the structure of the page.
 - CSS - Used to define presentation of the page
-- Javascript - Used to define behavior of the page such as hover effects and toggles.
+- Javascript - Used to calculate Order totals and collect form input.
 
 The languages also work hand in hand with some frameworks and libraries such as
 - Bootstrap 5 - A CSS framework that eases the process of making responsive sites.
@@ -20,6 +20,9 @@ The languages also work hand in hand with some frameworks and libraries such as
 The workhorses that led to the actualization of this page are:
 - Visual Studio Code - The lightweight code editor
 - Git and Github - The version control tools for modern day software.
+
+The core used in implementation of the project is:
+- Object Oriented Programming (OOP) - Allows us to write re-usable code by organizing it into data or objects.
 
 
 ## SETUP
